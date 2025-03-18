@@ -10,7 +10,7 @@ from .image_mcq import (
 from .image_mt import MMDUDataset
 from .image_vqa import (
     ImageVQADataset, MathVision, OCRBench, MathVista, LLaVABench, MMVet, MTVQADataset, TableVQABench,
-    CustomVQADataset, CRPE, MathVerse, OlympiadBench, QSpatial, VizWiz, MMNIAH, LogicVista
+    CustomVQADataset, CRPE, MathVerse, OlympiadBench, QSpatial, VizWiz, MMNIAH, LogicVista, MME_CoT
 )
 
 from .image_ccocr import CCOCRDataset
@@ -35,6 +35,8 @@ from .longvideobench import LongVideoBench
 from .video_concat_dataset import ConcatVideoDataset
 from .mmgenbench import MMGenBench
 from .cgbench import CGBench_MCQ_Grounding_Mini, CGBench_OpenEnded_Mini, CGBench_MCQ_Grounding, CGBench_OpenEnded
+from .moviechat1k import MovieChat1k
+from .vdc import VDC
 from .worldsense import WorldSense
 from .qbench_video import QBench_Video, QBench_Video_MCQ, QBench_Video_VQA
 
@@ -50,6 +52,7 @@ from .utils import *
 from .video_dataset_config import *
 from ..smp import *
 from .Omnidocbench.omnidocbench import OmniDocBench
+from .moat import MOAT
 
 
 class ConcatDataset(ImageBaseDataset):
@@ -147,12 +150,12 @@ IMAGE_DATASET = [
     OlympiadBench, WildVision, MMMath, QSpatial, Dynamath, MMGenBench, VizWiz, 
     MMNIAH, CMMMU, VLRewardBench, WeMath, LogicVista, MMMUProDataset, 
     CreationMMBenchDataset, ImageShortQADataset, MMAlignBench, OmniDocBench, 
-    VLM2Bench, VMCBenchDataset, EMMADataset
+    VLM2Bench, VMCBenchDataset, EMMADataset, MME_CoT, MOAT
 ]
 
 
 VIDEO_DATASET = [
-    MMBenchVideo, VideoMME, MVBench, MVBench_MP4, MVTamperBench, LongVideoBench, WorldSense,
+    MMBenchVideo, VideoMME, MVBench, MVBench_MP4, MVTamperBench, LongVideoBench, WorldSense, VDC, MovieChat1k, 
     MLVU, MLVU_MCQ, MLVU_OpenEnded,
     TempCompass, TempCompass_MCQ, TempCompass_Captioning, TempCompass_YorN,
     CGBench_MCQ_Grounding_Mini, CGBench_OpenEnded_Mini, CGBench_MCQ_Grounding, CGBench_OpenEnded, 
