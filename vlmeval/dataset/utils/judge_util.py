@@ -5,7 +5,7 @@ INTERNAL = os.environ.get('INTERNAL', 0)
 
 
 def build_judge(**kwargs):
-    from ...api import OpenAIWrapper, SiliconFlowAPI
+    from ...api import OpenAIWrapper, SiliconFlowAPI, GPTCustomAPI
     model = kwargs.pop('model', None)
     kwargs.pop('nproc', None)
     load_env()
@@ -31,6 +31,8 @@ def build_judge(**kwargs):
 
     if model in ['qwen-7b', 'qwen-72b', 'deepseek']:
         model = SiliconFlowAPI(model_version, **kwargs)
+    elif model in ['GPTCustomAPI']:
+        model = GPTCustomAPI(model_version, **kwargs)
     else:
         model = OpenAIWrapper(model_version, **kwargs)
     return model

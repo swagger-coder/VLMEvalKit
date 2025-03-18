@@ -2,6 +2,7 @@ from ..smp import *
 import os
 import sys
 from .base import BaseAPI
+import time
 
 APIBASES = {
     'OFFICIAL': 'https://api.openai.com/v1/chat/completions',
@@ -213,6 +214,7 @@ class OpenAIWrapper(BaseAPI):
         response = requests.post(
             self.api_base,
             headers=headers, data=json.dumps(payload), timeout=self.timeout * 1.1)
+        time.sleep(2)
         ret_code = response.status_code
         ret_code = 0 if (200 <= int(ret_code) < 300) else ret_code
         answer = self.fail_msg

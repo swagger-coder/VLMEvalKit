@@ -939,6 +939,33 @@ qwen2vl_series = {
         max_pixels=16384 * 28 * 28,
         use_custom_prompt=False,
     ),
+    "Qwen2.5-VL-3B-Instruct-A": partial(
+        Qwen2VLChat,
+        model_path='/root/paddlejob/workspace/env_run/output/luyao15/LLaMA-Factory/saves/qwen2_5_vl-110k-160k-3b-ac8/sft', #"Qwen/Qwen2.5-VL-3B-Instruct",
+        max_pixels=16384 * 28 * 28,
+        use_custom_prompt=False,
+    ),
+    "Qwen2.5-VL-3B-Instruct-B": partial(
+        Qwen2VLChat,
+        model_path='/root/paddlejob/workspace/env_run/output/luyao15/LLaMA-Factory/saves/Qwen2.5-VL-110k-3b-ac8-new/full/sft',
+        min_pixels=1280 * 28 * 28,
+        max_pixels=16384 * 28 * 28,
+        use_custom_prompt=False,
+    ),
+    "Qwen2.5-VL-3B-Instruct-C": partial(
+        Qwen2VLChat,
+        model_path='/root/paddlejob/workspace/env_run/output/luyao15/LLaMA-Factory/saves/qwen2_5_vl-16k-3b-ac4/full/sft',
+        min_pixels=1280 * 28 * 28,
+        max_pixels=16384 * 28 * 28,
+        use_custom_prompt=False,
+    ),
+    "Qwen2.5-VL-3B-Instruct-D": partial(
+        Qwen2VLChat,
+        model_path='/root/paddlejob/workspace/env_run/output/pengfeiyue/weight/Qwen2.5-VL_vl-110k-160k_en-3b-ac8/full/sft',
+        min_pixels=1280 * 28 * 28,
+        max_pixels=16384 * 28 * 28,
+        use_custom_prompt=False,
+    ),
     "Qwen2.5-VL-3B-Instruct-AWQ": partial(
         Qwen2VLChat,
         model_path="Qwen/Qwen2.5-VL-3B-Instruct-AWQ",
